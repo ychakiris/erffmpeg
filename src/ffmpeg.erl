@@ -23,8 +23,8 @@
 %%%---------------------------------------------------------------------------------------
 -module(ffmpeg).
 -include_lib("eunit/include/eunit.hrl").
--include_lib("erlmedia/include/video_frame.hrl").
--include_lib("erlmedia/include/media_info.hrl").
+-include_lib("../src/erlmedia/include/video_frame.hrl").
+-include_lib("../src/erlmedia/include/media_info.hrl").
 -include("log.hrl").
 
 -type(output_option() :: 

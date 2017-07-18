@@ -65,10 +65,9 @@ int main(int argc, char *argv[]) {
   } else {
     loop();
   }
-  return -1; // should never get here
 }
 
-git
+
 void loop() {
   int64_t dts_shift = AV_NOPTS_VALUE;
 
@@ -286,7 +285,7 @@ void loop() {
       if(fr->content == frame_content_audio) {
         if(!input_audio.ctx) error("input audio uninitialized");
 
-        AVFrame *decoded_frame = av_frame_alloc();
+        AVFrame *decoded_frame = avcodec_alloc_frame();
         int got_output = 0;
         int ret = avcodec_decode_audio4(input_audio.ctx, decoded_frame, &got_output, &packet);
         if(got_output) {
@@ -300,7 +299,7 @@ void loop() {
 
       if(fr->content == frame_content_video) {
         if(!input_video.ctx) error("input video uninitialized");
-        AVFrame *decoded_frame = av_frame_alloc();
+        AVFrame *decoded_frame = avcodec_alloc_frame();
         int could_decode = 0;
         int ret = avcodec_decode_video2(input_video.ctx, decoded_frame, &could_decode, &packet);
         if(ret < 0) {

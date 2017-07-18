@@ -4,24 +4,28 @@ Compile
 Must have installed ffmpeg libraries
 
 
-Run tests
+Run tests (from orginal README file)
 =========
 
 Launch test flussonic_ffmpeg first: 
 
+```
     ./priv/flussonic_ffmpeg -d 9000 -f
+
+```
 
 then 
 
+```
     make test
 
+```
 
 
-
-Building
+Building (from orginal README file)
 ========
 
-
+```
 wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
 tar zxvf yasm-1.2.0.tar.gz
 cd yasm-1.2.0
@@ -44,3 +48,7 @@ sudo make install
 cd ..
 sudo apt-get install rubygems
 sudo gem install --no-rdoc --no-ri fpm
+
+```
+
+

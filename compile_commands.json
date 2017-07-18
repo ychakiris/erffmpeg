@@ -1,0 +1,18 @@
+[
+{ "file"      : "c_src/ffmpeg.c"
+, "directory" : "/home/ychakiris/myprojects/erffmpeg"
+, "command"   : "cc -c -I/usr/local/include -g -Wall -fPIC -MMD -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/lib/erl_interface-3.10/include\" -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/erts-9.0/include\" c_src/ffmpeg.c -o c_src/ffmpeg.o"
+},
+{ "file"      : "c_src/debug_loop.c"
+, "directory" : "/home/ychakiris/myprojects/erffmpeg"
+, "command"   : "cc -c -I/usr/local/include -g -Wall -fPIC -MMD -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/lib/erl_interface-3.10/include\" -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/erts-9.0/include\" c_src/debug_loop.c -o c_src/debug_loop.o"
+},
+{ "file"      : "c_src/ffmpeg_io.c"
+, "directory" : "/home/ychakiris/myprojects/erffmpeg"
+, "command"   : "cc -c -I/usr/local/include -g -Wall -fPIC -MMD -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/lib/erl_interface-3.10/include\" -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/erts-9.0/include\" c_src/ffmpeg_io.c -o c_src/ffmpeg_io.o"
+},
+{ "file"      : "c_src/reader.c"
+, "directory" : "/home/ychakiris/myprojects/erffmpeg"
+, "command"   : "cc -c -I/usr/local/include -g -Wall -fPIC -MMD -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/lib/erl_interface-3.10/include\" -I\"/home/ychakiris/.asdf/installs/erlang/20.0/lib/erlang/erts-9.0/include\" c_src/reader.c -o c_src/reader.o"
+}
+]

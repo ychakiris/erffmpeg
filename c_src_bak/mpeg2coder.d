@@ -14,7 +14,7 @@
 
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
-#include <libavfilter/avcodec.h>
+// #include <libavfilter/avcodec.h>
 #include <libavfilter/avfilter.h>
 #include <libavfilter/avfiltergraph.h>
 #include <libavfilter/buffersink.h>
@@ -259,7 +259,7 @@ int main(int argc, char *argv[]) {
       }
  
       if(decoded) {
-        if (av_buffersrc_add_frame(audio->buffersrc_ctx, raw_audio, AV_BUFFERSRC_FLAG_PUSH) < 0) {
+        if (av_buffersrc_add_frame_flags(audio->buffersrc_ctx, raw_audio, AV_BUFFERSRC_FLAG_PUSH) < 0) {
           error("Error while feeding the audio filtergraph");
         }
         AVFilterBufferRef *samplesref;

@@ -2,7 +2,6 @@
 #include <arpa/inet.h>
 #include <arpa/inet.h>
 #include <sys/wait.h>
-#include <sys/types.h>
 #include <stdio.h>
 #include <strings.h>
 #include <stdlib.h>
@@ -58,8 +57,8 @@ void debug_loop(int argc, char *argv[], void (*loop)(void)) {
         _exit(0);
       } else {
         int stat_loc;
-        //     struct rusage rusage;
-        waitpid(child, &stat_loc, 0);
+        struct rusage rusage;
+        wait4(child, &stat_loc, 0, &rusage);
         if(WIFSIGNALED(stat_loc)) {
           fprintf(stderr, "Child process was signalled by %d\r\n", WTERMSIG(stat_loc));
         } else if(WIFEXITED(stat_loc)) {
