@@ -111,8 +111,8 @@ init_decoder(Port, #media_info{streams = Streams}) ->
   ok.
 
 
-ev_to_av(h264) -> libx264;
-ev_to_av(aac) -> libfaac;
+ev_to_av(h264) -> mpeg4;
+ev_to_av(aac) -> mp2;
 ev_to_av(Codec) -> Codec.
 
 av_to_ev(libx264) -> h264;

@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
   return -1; // should never get here
 }
 
-git
+
 void loop() {
   int64_t dts_shift = AV_NOPTS_VALUE;
 

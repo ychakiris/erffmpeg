@@ -1,7 +1,8 @@
 -module(ffmpeg_tests).
 -include_lib("eunit/include/eunit.hrl").
--include_lib("erlmedia/include/video_frame.hrl").
--include_lib("erlmedia/include/media_info.hrl").
+-include_lib("../src/erlmedia/include/video_frame.hrl").
+-include_lib("../src/erlmedia/include/media_info.hrl").
+
 
 -compile(export_all).
 
@@ -55,7 +56,7 @@ test_init_decoder() ->
 test_init_encoder() ->
   Port = launch(),
   MediaInfo = #media_info{streams = [
-    #stream_info{track_id = 1, content = video, codec = h264, bitrate = 900000, params = #video_params{width = 240, height = 160}, options = []}
+    #stream_info{track_id = 1, content = video, codec = h264, bitrate = 702000, params = #video_params{width = 320, height = 180}, options = []}
     ,#stream_info{track_id = 2, content = audio, codec = aac, bitrate = 64000, params = #audio_params{sample_rate = 44100, channels = 2}}
   ]},
   ffmpeg:init_decoder(Port, media_info()),
@@ -99,12 +100,12 @@ test_transcode_video() ->
 
 
 media_info() ->
-  {ok, F} = file:open("../../../priv/bunny.mp4", [binary,read,raw]),
+  {ok, F} = file:open("../priv/BigBuckBunny_320x180.mp4", [binary,read,raw]),
   {ok, R} = mp4_reader:init({file,F},[]),
   mp4_reader:media_info(R).  
 
 frames() ->
-  {ok, F} = file:open("../../../priv/bunny.mp4", [binary,read,raw]),
+  {ok, F} = file:open("../priv/BigBuckBunny_320x180.mp4", [binary,read,raw]),
   {ok, R} = mp4_reader:init({file,F},[]),
   Frames = read_frames(R, undefined),
   Frames.
